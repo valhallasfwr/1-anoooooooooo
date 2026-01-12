@@ -1,1 +1,81 @@
-index.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Nós desde 13/01/2025 ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #0f0f0f, #1c1c1c);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 { margin-top: 30px; }
+    .contador { font-size: 1.3em; margin: 20px 0; }
+    .fotos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      margin: 30px 0;
+    }
+    .fotos img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .mensagem {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-top: 30px;
+    }
+    footer {
+      margin-top: 40px;
+      opacity: 0.7;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+<h1>💞 Nós desde 13/01/2025</h1>
+
+<div class="contador" id="contador">Carregando...</div>
+
+<div class="fotos">
+  <img src="foto1.jpg">
+  <img src="foto2.jpg">
+  <img src="foto3.jpg">
+</div>
+
+<div class="mensagem">
+  <p>
+    Desde aquele dia, tudo ganhou mais sentido.<br>
+    Cada segundo ao seu lado é o meu lugar favorito. ❤️
+  </p>
+</div>
+
+<footer>Feito com amor 🖤</footer>
+
+<script>
+const inicio = new Date("2025-01-13T14:00:00");
+
+function atualizar() {
+  const agora = new Date();
+  const diff = agora - inicio;
+
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diff / (1000 * 60)) % 60);
+
+  document.getElementById("contador").innerHTML =
+    `⏳ Estamos juntos há <br><strong>${dias} dias, ${horas} horas e ${minutos} minutos</strong>`;
+}
+
+atualizar();
+setInterval(atualizar, 1000);
+</script>
+
+</body>
+</html>
