@@ -35,18 +35,20 @@
       opacity: 0.7;
       font-size: 0.9em;
     }
-    .galeria-extra {
+  .galeria-extra {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
   margin: 30px 0;
 }
 
 .galeria-extra img {
   width: 100%;
-  border-radius: 12px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  border-radius: 8px;
 }
+
   </style>
 </head>
 <body>
