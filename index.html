@@ -35,6 +35,12 @@
       opacity: 0.7;
       font-size: 0.9em;
     }
+    <button class="botao-musica" onclick="toggleMusica()">🎵</button>
+
+<audio id="musica" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
   .galeria-extra {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -47,6 +53,21 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 8px;
+}
+.botao-musica {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  z-index: 1000;
 }
 
   </style>
@@ -116,6 +137,20 @@ function atualizar() {
 
 atualizar();
 setInterval(atualizar, 1000);
+
+  function toggleMusica() {
+  const musica = document.getElementById('musica');
+  const botao = document.querySelector('.botao-musica');
+
+  if (musica.paused) {
+    musica.play();
+    botao.innerText = '⏸️';
+  } else {
+    musica.pause();
+    botao.innerText = '🎵';
+  }
+}
+
 </script>
 
 </body>
