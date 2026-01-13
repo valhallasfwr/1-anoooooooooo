@@ -164,20 +164,23 @@ setInterval(atualizar, 1000);
     botao.innerText = '🎵';
   }
 }
-const imagens = document.querySelectorAll('.galeria-extra img, .fotos img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
+document.addEventListener('DOMContentLoaded', () => {
+  const imagens = document.querySelectorAll('.galeria-extra img, .fotos img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
 
-imagens.forEach(img => {
-  img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
-    lightbox.style.display = 'flex';
+  imagens.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
   });
+
+  window.fecharImagem = function () {
+    lightbox.style.display = 'none';
+  };
 });
 
-function fecharImagem() {
-  lightbox.style.display = 'none';
-}
 
 </script>
 <button class="botao-musica" onclick="toggleMusica()">🎵</button>
